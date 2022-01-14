@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Shop.Products;
 
 
+
 namespace Shop
 {
 
@@ -19,6 +20,7 @@ namespace Shop
         public Shop()
         {
             InitializeComponent();
+            
             menu.View = View.Details;
             menu.Columns.Add("Name", -2, HorizontalAlignment.Left);
             menu.Columns.Add("Price", -2, HorizontalAlignment.Left);
@@ -127,6 +129,10 @@ namespace Shop
         private void add_Click(object sender, EventArgs e)
         {
             orderlist.Items.Add(Convert.ToString(orderbox.SelectedItem));
+            if (orderlist.Items.Contains(""))
+            {
+                orderlist.Items.Remove("");
+            }
         }
 
         private void orderbox_SelectedIndexChanged(object sender, EventArgs e)
@@ -285,6 +291,16 @@ namespace Shop
         }
 
         private void pricesumm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
 
         }
